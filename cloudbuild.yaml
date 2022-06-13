@@ -8,7 +8,7 @@ steps:
   args:
     - -c
     - |
-       gcloud compute ssh bastion --zone us-central1-a
+       gcloud compute ssh bastion-host --zone us-central1-a
        echo "$now"
        gcloud container clusters get-credentials primary --region us-west1 --project speedy-octane-346221
   # test 123
