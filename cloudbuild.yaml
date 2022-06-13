@@ -1,8 +1,8 @@
 steps:
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['build', '-t', 'us-central1-docker.pkg.dev/${PROJECT_ID}/repo1/my-image', '.']
+  args: ['build', '-t', 'us-central1-docker.pkg.dev/${PROJECT_ID}/gcr.io/my-image', '.']
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['push', 'us-central1-docker.pkg.dev/${PROJECT_ID}/repo1/my-image']
+  args: ['push', 'us-central1-docker.pkg.dev/${PROJECT_ID}/gcr.io/my-image']
 - name: 'gcr.io/cloud-builders/gcloud'
   entrypoint: 'bash'
   args:
@@ -11,6 +11,6 @@ steps:
        gcloud compute ssh bastion --zone us-central1-a
        echo "Hello"
        gcloud container clusters get-credentials primary --region us-west1 --project speedy-octane-346221
-       docker pull repo1/my-image
-       docker run  repo/my-image   
+       docker pull gcr.io/speedy-octane-346221/my-image
+       docker images
   # test 123
