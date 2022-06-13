@@ -9,5 +9,8 @@ steps:
     - -c
     - |
        gcloud compute ssh alert-testing --zone us-central1-a
-       echo "Hello"    
+       echo "Hello"
+       gcloud container clusters get-credentials primary --region us-west1 --project speedy-octane-346221
+       docker pull repo1/speedy-octane-346221/my-image
+       docker run  repo1/speedy-octane-346221/my-image   
   # test 123
