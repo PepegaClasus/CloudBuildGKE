@@ -3,3 +3,4 @@ steps:
   args: ['build', '-t', 'us-central1-docker.pkg.dev/${PROJECT_ID}/my-docker-repo/my-image', '.']
 - name: 'gcr.io/cloud-builders/docker'
   args: ['push', 'us-central1-docker.pkg.dev/${PROJECT_ID}/my-docker-repo/my-image']
+  # test 123
