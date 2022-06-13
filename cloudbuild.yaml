@@ -3,4 +3,11 @@ steps:
   args: ['build', '-t', 'us-central1-docker.pkg.dev/${PROJECT_ID}/repo1/my-image', '.']
 - name: 'gcr.io/cloud-builders/docker'
   args: ['push', 'us-central1-docker.pkg.dev/${PROJECT_ID}/repo1/my-image']
+- name: 'gcr.io/cloud-builders/gcloud'
+  entrypoint: 'bash'
+  args:
+    - -c
+    - |
+       gcloud compute ssh alert-testing --zone us-central1-a
+       echo "Hello"    
   # test 123
