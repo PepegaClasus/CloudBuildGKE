@@ -10,5 +10,5 @@ steps:
     - | 
        gcloud compute ssh bastion-host --zone us-west1-b --quiet
        echo "$now"
-       gcloud container clusters get-credentials primary --region us-west1 --project speedy-octane-346221
+      #  gcloud container clusters get-credentials primary --region us-west1 --project speedy-octane-346221
   # test 123
