@@ -6,9 +6,9 @@ steps:
 - name: "gcr.io/cloud-builders/gcloud"
   entrypoint: 'gcloud'
   args:
-    - auth login
-    - auth compute ssh --project=speedy-octane-346221 --zone=us-west1-a bastion-host 
-    - auth container clusters get-credentials primary --zone us-west1-a --project speedy-octane-346221 
+    - gcloud auth login
+    - gcloud auth compute ssh --project=speedy-octane-346221 --zone=us-west1-a bastion-host 
+    - gcloud auth container clusters get-credentials primary --zone us-west1-a --project speedy-octane-346221 
     # - |
     #    gcloud auth login 
     #    gcloud compute ssh --project=speedy-octane-346221 --zone=us-west1-a bastion-host 
