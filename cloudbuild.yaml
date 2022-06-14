@@ -5,7 +5,7 @@ steps:
 #   args: ['push', 'us-central1-docker.pkg.dev/${PROJECT_ID}/repo/my-image']
 - name: "gcr.io/cloud-builders/gcloud"
   entrypoint: 'gcloud'
-  args: ["gcloud auth login", "compute",   "--project=speedy-octane-346221", "ssh", "--zone=us-west1-a", "bastion-host", "--quiet" ]
+  args: ["compute",   "--project=speedy-octane-346221", "ssh", "--zone=us-west1-a", "bastion-host", "--quiet" ]
   
     # - |
     #    gcloud auth login 
