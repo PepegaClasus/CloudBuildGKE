@@ -3,12 +3,17 @@ steps:
 #   args: ['build', '-t', 'us-central1-docker.pkg.dev/${PROJECT_ID}/repo/my-image', '.']
 # - name: 'gcr.io/cloud-builders/docker'
 #   args: ['push', 'us-central1-docker.pkg.dev/${PROJECT_ID}/repo/my-image']
+# - name: "gcr.io/cloud-builders/gcloud"
+#   entrypoint: 'bash'
+#   args:
+#   - -c
+#   - |
+#     gcloud compute ssh --project=speedy-octane-346221 --zone=us-west1-a bastion-host
+
 - name: "gcr.io/cloud-builders/gcloud"
-  entrypoint: 'bash'
-  args:
-  - -c
-  - |
-    gcloud compute ssh --project=speedy-octane-346221 --zone=us-west1-a bastion-host
+  args: [compute, ssh, --project=speedy-octane-346221, --zone=us-west1-a, bastion-host]
+
+
 
   
     # - |
