@@ -11,7 +11,7 @@ steps:
 #     gcloud compute ssh --project=speedy-octane-346221 --zone=us-west1-a bastion-host
 
 - name: "gcr.io/cloud-builders/gcloud"
-  args: [compute, ssh, --project=speedy-octane-346221, --zone=us-west1-a, bastion-host]
+  args: [compute, ssh, bastion-host, --zone=us-west1-a]
 
 
 
